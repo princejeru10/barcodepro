@@ -93,7 +93,7 @@ Begin VB.Form BCTPROmain
       End
       Begin VB.Label BCBarCode3 
          Alignment       =   2  'Center
-         Caption         =   "Label17"
+         Caption         =   "1234567890198"
          Height          =   255
          Left            =   7080
          TabIndex        =   59
@@ -758,7 +758,7 @@ Private Function getCN() As Integer
     Do Until ctr >= Len(barcode)
         temp = Mid(barcode, ctr + 1, 1)
         If Not (ctr Mod 2) = 0 Then
-            p1 = p1 + temp
+            p1 = p1 + (temp * 3)
         Else
             p2 = p2 + temp
         End If
@@ -766,9 +766,10 @@ Private Function getCN() As Integer
     Loop
         
     r = 0
-    z = p1 + 3 * p2
+    z = p1 + p2
     
     r = NearestTen(z, r)
+    
         
     cn = r - z
     
