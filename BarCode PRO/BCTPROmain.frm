@@ -16,7 +16,7 @@ Begin VB.Form BCTPROmain
    Begin MSComctlLib.ListView ListView1 
       Height          =   3375
       Left            =   4920
-      TabIndex        =   62
+      TabIndex        =   53
       Top             =   3360
       Width           =   10695
       _ExtentX        =   18865
@@ -68,52 +68,28 @@ Begin VB.Form BCTPROmain
          Object.Width           =   2540
       EndProperty
    End
-   Begin VB.CommandButton PrintAllBtn 
-      Caption         =   "PRINT ALL"
-      Height          =   495
-      Left            =   11400
-      TabIndex        =   54
-      Top             =   6840
-      Width           =   2055
-   End
    Begin VB.CommandButton ExitBtn 
       Caption         =   "EXIT"
       Height          =   495
       Left            =   13560
-      TabIndex        =   53
+      TabIndex        =   45
       Top             =   6840
       Width           =   2055
    End
    Begin VB.CommandButton PrintBtn 
       Caption         =   "PRINT"
       Height          =   495
-      Left            =   9240
-      TabIndex        =   52
+      Left            =   11280
+      TabIndex        =   44
       Top             =   6840
-      Width           =   2055
-   End
-   Begin VB.CommandButton NextBtn 
-      Caption         =   "NEXT"
-      Height          =   495
-      Left            =   7080
-      TabIndex        =   51
-      Top             =   6840
-      Width           =   2055
-   End
-   Begin VB.CommandButton PrevBtn 
-      Caption         =   "PREVIOUS"
-      Height          =   495
-      Left            =   4920
-      TabIndex        =   50
-      Top             =   6840
-      Width           =   2055
+      Width           =   2175
    End
    Begin VB.PictureBox Picture1 
       Height          =   3015
       Left            =   4920
       ScaleHeight     =   2955
       ScaleWidth      =   10635
-      TabIndex        =   22
+      TabIndex        =   16
       Top             =   240
       Width           =   10695
       Begin VB.Label BCBarCode2 
@@ -121,7 +97,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "1234567890128"
          Height          =   255
          Left            =   3600
-         TabIndex        =   61
+         TabIndex        =   52
          Top             =   2280
          Width           =   3255
       End
@@ -130,7 +106,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "1234567890128"
          Height          =   255
          Left            =   120
-         TabIndex        =   60
+         TabIndex        =   51
          Top             =   2280
          Width           =   3255
       End
@@ -148,7 +124,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   735
          Left            =   3720
-         TabIndex        =   59
+         TabIndex        =   50
          Top             =   1560
          Width           =   3015
       End
@@ -166,7 +142,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   735
          Left            =   240
-         TabIndex        =   58
+         TabIndex        =   49
          Top             =   1560
          Width           =   3015
       End
@@ -175,7 +151,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "1234567890128"
          Height          =   255
          Left            =   7080
-         TabIndex        =   57
+         TabIndex        =   48
          Top             =   2280
          Width           =   3255
       End
@@ -193,7 +169,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   735
          Left            =   7200
-         TabIndex        =   56
+         TabIndex        =   47
          Top             =   1560
          Width           =   3015
       End
@@ -202,7 +178,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "12/5"
          Height          =   255
          Left            =   9360
-         TabIndex        =   49
+         TabIndex        =   43
          Top             =   2640
          Width           =   975
       End
@@ -211,7 +187,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "1234"
          Height          =   255
          Left            =   8280
-         TabIndex        =   48
+         TabIndex        =   42
          Top             =   2640
          Width           =   975
       End
@@ -220,7 +196,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "12345678"
          Height          =   255
          Left            =   7200
-         TabIndex        =   47
+         TabIndex        =   41
          Top             =   2640
          Width           =   975
       End
@@ -229,7 +205,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "12/5"
          Height          =   255
          Left            =   5880
-         TabIndex        =   46
+         TabIndex        =   40
          Top             =   2640
          Width           =   975
       End
@@ -238,7 +214,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "1234"
          Height          =   255
          Left            =   4800
-         TabIndex        =   45
+         TabIndex        =   39
          Top             =   2640
          Width           =   975
       End
@@ -247,7 +223,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "12345678"
          Height          =   255
          Left            =   3720
-         TabIndex        =   44
+         TabIndex        =   38
          Top             =   2640
          Width           =   975
       End
@@ -256,7 +232,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "12/5"
          Height          =   255
          Left            =   2400
-         TabIndex        =   43
+         TabIndex        =   37
          Top             =   2640
          Width           =   975
       End
@@ -265,7 +241,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "1234"
          Height          =   255
          Left            =   1320
-         TabIndex        =   42
+         TabIndex        =   36
          Top             =   2640
          Width           =   975
       End
@@ -274,7 +250,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "12345678"
          Height          =   255
          Left            =   240
-         TabIndex        =   41
+         TabIndex        =   35
          Top             =   2640
          Width           =   975
       End
@@ -283,7 +259,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "ITEM DESCRIPTION"
          Height          =   255
          Left            =   7080
-         TabIndex        =   40
+         TabIndex        =   34
          Top             =   1320
          Width           =   3255
       End
@@ -292,7 +268,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "ITEM DESCRIPTION"
          Height          =   255
          Left            =   3600
-         TabIndex        =   39
+         TabIndex        =   33
          Top             =   1320
          Width           =   3255
       End
@@ -301,7 +277,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "ITEM DESCRIPTION"
          Height          =   255
          Left            =   120
-         TabIndex        =   38
+         TabIndex        =   32
          Top             =   1320
          Width           =   3255
       End
@@ -310,7 +286,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "12345678"
          Height          =   255
          Left            =   7080
-         TabIndex        =   37
+         TabIndex        =   31
          Top             =   1080
          Width           =   3255
       End
@@ -319,7 +295,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "12345678"
          Height          =   255
          Left            =   3600
-         TabIndex        =   36
+         TabIndex        =   30
          Top             =   1080
          Width           =   3255
       End
@@ -328,7 +304,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "12345678"
          Height          =   255
          Left            =   120
-         TabIndex        =   35
+         TabIndex        =   29
          Top             =   1080
          Width           =   3255
       End
@@ -336,7 +312,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "/PC"
          Height          =   255
          Left            =   9480
-         TabIndex        =   34
+         TabIndex        =   28
          Top             =   720
          Width           =   615
       End
@@ -354,7 +330,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   375
          Left            =   7680
-         TabIndex        =   33
+         TabIndex        =   27
          Top             =   720
          Width           =   495
       End
@@ -372,7 +348,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   375
          Left            =   7080
-         TabIndex        =   32
+         TabIndex        =   26
          Top             =   720
          Width           =   3255
       End
@@ -380,7 +356,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "/PC"
          Height          =   255
          Left            =   6000
-         TabIndex        =   31
+         TabIndex        =   25
          Top             =   720
          Width           =   615
       End
@@ -398,7 +374,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   375
          Left            =   4200
-         TabIndex        =   30
+         TabIndex        =   24
          Top             =   720
          Width           =   495
       End
@@ -416,7 +392,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   375
          Left            =   3600
-         TabIndex        =   29
+         TabIndex        =   23
          Top             =   720
          Width           =   3255
       End
@@ -424,7 +400,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "/PC"
          Height          =   255
          Left            =   2520
-         TabIndex        =   28
+         TabIndex        =   22
          Top             =   720
          Width           =   615
       End
@@ -442,7 +418,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   375
          Left            =   720
-         TabIndex        =   27
+         TabIndex        =   21
          Top             =   720
          Width           =   495
       End
@@ -460,7 +436,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   26
+         TabIndex        =   20
          Top             =   720
          Width           =   3255
       End
@@ -480,7 +456,7 @@ Begin VB.Form BCTPROmain
          ForeColor       =   &H8000000B&
          Height          =   495
          Left            =   7080
-         TabIndex        =   25
+         TabIndex        =   19
          Top             =   120
          Width           =   3255
       End
@@ -500,7 +476,7 @@ Begin VB.Form BCTPROmain
          ForeColor       =   &H8000000B&
          Height          =   735
          Left            =   -120
-         TabIndex        =   24
+         TabIndex        =   18
          Top             =   120
          Width           =   10695
       End
@@ -520,7 +496,7 @@ Begin VB.Form BCTPROmain
          ForeColor       =   &H8000000B&
          Height          =   495
          Left            =   120
-         TabIndex        =   23
+         TabIndex        =   17
          Top             =   120
          Width           =   3255
       End
@@ -549,34 +525,17 @@ Begin VB.Form BCTPROmain
          Width           =   3255
       End
    End
-   Begin VB.CommandButton ResetBtn 
-      Caption         =   "RESET"
-      Height          =   495
-      Left            =   2520
-      TabIndex        =   21
-      Top             =   6840
-      Width           =   2295
-   End
-   Begin VB.CommandButton PreviewBtn 
-      Caption         =   "SUBMIT"
-      Default         =   -1  'True
-      Height          =   495
-      Left            =   120
-      TabIndex        =   20
-      Top             =   6840
-      Width           =   2295
-   End
    Begin VB.Frame dateFrame 
       Caption         =   "EFFECTIVE DATE"
       Height          =   1575
       Left            =   120
-      TabIndex        =   15
+      TabIndex        =   11
       Top             =   5160
       Width           =   4695
       Begin VB.TextBox dateFromText 
          Height          =   405
          Left            =   840
-         TabIndex        =   16
+         TabIndex        =   12
          Text            =   "Text1"
          Top             =   360
          Width           =   2055
@@ -584,7 +543,7 @@ Begin VB.Form BCTPROmain
       Begin VB.TextBox dateToText 
          Height          =   405
          Left            =   840
-         TabIndex        =   17
+         TabIndex        =   13
          Text            =   "Text1"
          Top             =   840
          Width           =   2055
@@ -593,7 +552,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "From"
          Height          =   255
          Left            =   240
-         TabIndex        =   19
+         TabIndex        =   15
          Top             =   480
          Width           =   735
       End
@@ -601,7 +560,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "To"
          Height          =   375
          Left            =   240
-         TabIndex        =   18
+         TabIndex        =   14
          Top             =   960
          Width           =   735
       End
@@ -610,14 +569,14 @@ Begin VB.Form BCTPROmain
       Caption         =   "BARCODE/ITEM"
       Height          =   1575
       Left            =   120
-      TabIndex        =   10
+      TabIndex        =   6
       Top             =   3480
       Width           =   4695
       Begin VB.TextBox barcodeFromText 
          Height          =   405
          Left            =   840
          MaxLength       =   13
-         TabIndex        =   11
+         TabIndex        =   7
          Text            =   "Text1"
          Top             =   360
          Width           =   3615
@@ -626,7 +585,7 @@ Begin VB.Form BCTPROmain
          Height          =   405
          Left            =   840
          MaxLength       =   13
-         TabIndex        =   12
+         TabIndex        =   8
          Text            =   "Text1"
          Top             =   840
          Width           =   3615
@@ -635,7 +594,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "From"
          Height          =   255
          Left            =   240
-         TabIndex        =   14
+         TabIndex        =   10
          Top             =   480
          Width           =   735
       End
@@ -643,7 +602,7 @@ Begin VB.Form BCTPROmain
          Caption         =   "To"
          Height          =   375
          Left            =   240
-         TabIndex        =   13
+         TabIndex        =   9
          Top             =   960
          Width           =   735
       End
@@ -652,24 +611,31 @@ Begin VB.Form BCTPROmain
       Caption         =   "SKU"
       Height          =   1575
       Left            =   120
-      TabIndex        =   5
+      TabIndex        =   3
       Top             =   1800
       Width           =   4695
-      Begin VB.TextBox skuFromText 
-         Height          =   405
-         Left            =   840
-         MaxLength       =   8
-         TabIndex        =   6
-         Text            =   "Text1"
+      Begin VB.ComboBox skuTo 
+         Height          =   315
+         Left            =   2880
+         TabIndex        =   59
+         Text            =   "Combo1"
          Top             =   360
          Width           =   1575
       End
-      Begin VB.TextBox skuToText 
-         Height          =   405
-         Left            =   840
-         MaxLength       =   8
-         TabIndex        =   7
-         Text            =   "Text1"
+      Begin VB.ComboBox skuFrom 
+         Height          =   315
+         Left            =   720
+         TabIndex        =   58
+         Text            =   "Combo1"
+         Top             =   360
+         Width           =   1575
+      End
+      Begin VB.CommandButton skuBtn 
+         Caption         =   "SUBMIT"
+         Enabled         =   0   'False
+         Height          =   495
+         Left            =   2880
+         TabIndex        =   57
          Top             =   840
          Width           =   1575
       End
@@ -677,17 +643,17 @@ Begin VB.Form BCTPROmain
          Caption         =   "From"
          Height          =   255
          Left            =   240
-         TabIndex        =   9
-         Top             =   480
-         Width           =   735
+         TabIndex        =   5
+         Top             =   360
+         Width           =   495
       End
       Begin VB.Label skuToLabel 
          Caption         =   "To"
          Height          =   375
-         Left            =   240
-         TabIndex        =   8
-         Top             =   960
-         Width           =   735
+         Left            =   2520
+         TabIndex        =   4
+         Top             =   360
+         Width           =   255
       End
    End
    Begin VB.Frame deptFrame 
@@ -697,38 +663,44 @@ Begin VB.Form BCTPROmain
       TabIndex        =   0
       Top             =   120
       Width           =   4695
-      Begin VB.TextBox deptToText 
-         Height          =   405
-         Left            =   840
-         MaxLength       =   4
-         TabIndex        =   4
-         Text            =   "Text1"
+      Begin VB.CommandButton deptFilterBtn 
+         Caption         =   "SUBMIT"
+         Height          =   495
+         Left            =   2880
+         TabIndex        =   56
          Top             =   840
-         Width           =   1095
+         Width           =   1575
       End
-      Begin VB.TextBox deptFromText 
-         Height          =   405
-         Left            =   840
-         MaxLength       =   4
-         TabIndex        =   3
-         Text            =   "Text1"
+      Begin VB.ComboBox deptTo 
+         Height          =   315
+         Left            =   2880
+         TabIndex        =   55
+         Text            =   "Combo2"
          Top             =   360
-         Width           =   1095
+         Width           =   1575
+      End
+      Begin VB.ComboBox deptFrom 
+         Height          =   315
+         Left            =   720
+         TabIndex        =   54
+         Text            =   "Combo1"
+         Top             =   360
+         Width           =   1590
       End
       Begin VB.Label deptToLabel 
          Caption         =   "To"
-         Height          =   375
-         Left            =   240
+         Height          =   255
+         Left            =   2520
          TabIndex        =   2
-         Top             =   960
-         Width           =   735
+         Top             =   360
+         Width           =   375
       End
       Begin VB.Label deptFromLabel 
          Caption         =   "From"
          Height          =   255
          Left            =   240
          TabIndex        =   1
-         Top             =   480
+         Top             =   360
          Width           =   735
       End
    End
@@ -745,7 +717,7 @@ Begin VB.Form BCTPROmain
       EndProperty
       Height          =   975
       Left            =   5280
-      TabIndex        =   55
+      TabIndex        =   46
       Top             =   1800
       Width           =   2535
    End
@@ -757,16 +729,22 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Public bc As String
 
+
+Private Sub deptFilterBtn_Click()
+    ListViewMod.ByDept
+End Sub
+
 Private Sub Form_Load()
     reset
     ListViewMod.PopulateListView
+    mainMod.SetDept
 End Sub
 
 Private Function reset()
-    deptFromText.Text = ""
-    deptToText.Text = ""
-    skuFromText.Text = ""
-    skuToText.Text = ""
+    deptFrom.Text = ""
+    deptTo.Text = ""
+    skuFrom.Text = ""
+    skuTo.Text = ""
     barcodeFromText.Text = ""
     barcodeToText.Text = ""
     dateFromText.Text = ""
@@ -847,6 +825,6 @@ Private Function NearestTen(ByVal z As Integer, ByRef r As Integer) As Integer
 End Function
 
 Private Sub ExitBtn_Click()
-    BCTPROmainMod.Terminate
+    mainMod.Terminate
     End
 End Sub

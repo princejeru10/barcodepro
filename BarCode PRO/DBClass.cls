@@ -58,7 +58,7 @@ End Function
 
 Public Function Filter(ByVal field, ByVal sqlFrom, ByVal sqlTo) As ADODB.Recordset
     Dim stmt As String
-    stmt = "SELECT * FROM bcp_temp WHERE " & field & " BETWEEN " & sqlFrom & " AND " & sqlTo
+    stmt = "SELECT * FROM bcp_temp WHERE `" & field & "` BETWEEN '" & sqlFrom & "' AND '" & sqlTo & "' ORDER BY " & field & " ASC"
     Set cmd = New ADODB.Command
     cmd.ActiveConnection = conn
     cmd.CommandType = adCmdText
@@ -86,6 +86,4 @@ Public Sub DBTerminate()
     Set cmd = Nothing
     Set conn = Nothing
 End Sub
-
-
 

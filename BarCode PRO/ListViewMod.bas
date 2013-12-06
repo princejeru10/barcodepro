@@ -5,7 +5,7 @@ Public Sub PopulateListView()
     Dim rs As New ADODB.Recordset
     DBCon.dbOpen
         Dim lstItem As ListItem
-        Set rs = DBCon.getData
+        Set rs = DBCon.GetData
             With BCTPROmain
                 With .ListView1
                     .ListItems.Clear
@@ -24,6 +24,65 @@ Public Sub PopulateListView()
     SelectFirstRow
     
     
+End Sub
+
+
+Public Sub ByDept()
+    Dim rs As New ADODB.Recordset
+    Dim field, deptFrom, deptTo As String
+    
+    field = "DeptID"
+    
+    With BCTPROmain
+        deptFrom = .deptFrom.Text
+        deptTo = .deptTo.Text
+        
+        DBCon.dbOpen
+        Set rs = DBCon.Filter(field, deptFrom, deptTo)
+        With .ListView1
+            .ListItems.Clear
+            rs.MoveFirst
+            mainMod.ResetSKU
+            mainMod.SetSKUText (rs(2))
+            Do Until rs.EOF
+                Set lstItem = .ListItems.Add(, , rs(0))
+                For i = 1 To rs.Fields.Count - 1
+                    lstItem.SubItems(i) = rs(i)
+                Next
+                mainMod.SetSKU (rs(2))
+            rs.MoveNext
+            Loop
+        End With
+    End With
+    DBCon.DBTerminate
+            
+    SelectFirstRow
+End Sub
+
+Public Sub GetSKU()
+    Dim rs As New ADODB.Recordset
+    Dim field, skuFrom, skuTo As String
+    
+    field = "Sku"
+    
+    With BCTPROmain
+        skuFrom = .skuFrom.Text
+        skuTo = .skuTo.Text
+        
+        DBCon.dbOpen
+        Set rs = DBCon.Filter(field, skuFrom, skuTo)
+        With .ListView1
+            .ListItems.Clear
+            rs.MoveFirst
+            Do Until rs.EOF
+                Set lstItem = .ListItems.Add(, , rs(0))
+                For i = 1 To rs.Fields.Count - 1
+                    lstItem.SubItems(i) = rs(i)
+                Next
+            rs.MoveNext
+            Loop
+        End With
+    End With
 End Sub
 
 Public Function SelectFirstRow()
