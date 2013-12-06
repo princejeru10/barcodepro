@@ -784,31 +784,6 @@ Private Sub PreviewBtn_Click()
     deptNum = deptFromText.Text
     sku = skuFromText.Text
     
-    cn = getCN
-    bc = deptNum & sku & cn
-    
-    skuBC1.Caption = sku
-    skuBC2.Caption = sku
-    skuBC3.Caption = sku
-    skuBC4.Caption = sku
-    skuBC5.Caption = sku
-    skuBC6.Caption = sku
-    
-    deptBC1.Caption = deptNum
-    deptBC2.Caption = deptNum
-    deptBC3.Caption = deptNum
-    
-    dateBC1.Caption = Month(Now) & "/" & Day(Now)
-    dateBC2.Caption = Month(Now) & "/" & Day(Now)
-    dateBC3.Caption = Month(Now) & "/" & Day(Now)
-    
-    BCBarCode1.Caption = bc
-    BCBarCode2.Caption = bc
-    BCBarCode3.Caption = bc
-    
-    BC1.Caption = deptNum & sku
-    BC2.Caption = deptNum & sku
-    BC3.Caption = bc
 End Sub
 
 Private Sub resetBtn_Click()
@@ -872,7 +847,6 @@ Private Function NearestTen(ByVal z As Integer, ByRef r As Integer) As Integer
 End Function
 
 Private Sub ExitBtn_Click()
+    BCTPROmainMod.Terminate
     End
 End Sub
-
-

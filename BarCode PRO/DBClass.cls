@@ -13,16 +13,18 @@ Attribute VB_PredeclaredId = False
 Attribute VB_Exposed = False
 Dim conn As New ADODB.Connection
 Dim rs As New ADODB.Recordset
+Dim cmd As New ADODB.Command
 Dim connString As String
+Option Explicit
 
 Public Sub dbOpen()
-
-    conn.ConnectionString = "Provider=SQLNCLI10;Server=ACCTG-CHRIS\SQLEXPRESS;DataTypeCompatibility=80;Database=BCBeta;User Id=carlo_;Password=/stats;"
-    On Error GoTo ErrorHandler
+    'conn.ConnectionString = "Provider=SQLNCLI10;Server=ACCTG-CHRIS\SQLEXPRESS;DataTypeCompatibility=80;Database=BCBeta;User Id=carlo_;Password=/stats;"
+    conn.ConnectionString = "Driver={MySQL ODBC 5.2 UNICODE Driver};Server=localhost;Database=bcbeta;User=root;Password=;Option=3"
+    'On Error GoTo ErrorHandler
         conn.Open
-ErrorHandler:
-        MsgBox "Can't Connect to Database/Server", vbOKOnly, "Error"
-        End
+'ErrorHandler:
+ '       MsgBox "Can't Connect to Database/Server" & vbNewLine & Err.Description, vbOKOnly, "Error"
+  '      End
     
 End Sub
     
@@ -31,14 +33,59 @@ Public Sub dbClose()
     conn.Close
 
 End Sub
+'Public Function Fetch(ByVal stmt) As ADODB.Recordset
+ '   Set cmd = New ADODB.Command
+  '  cmd.ActiveConnection = conn
+  '  cmd.CommandType = adCmdText
+  '  'cmd.CommandText = "Select * from BCP_TEMP"
+  '  cmd.CommandText = stmt
+  '
+  '  Set Fetch = cmd.Execute
+'End Function
 
-Public Function getData() As ADODB.Recordset
+Public Function GetData() As ADODB.Recordset
+    Dim stmt As String
+    stmt = "Select * from bcp_temp"
+     Set cmd = New ADODB.Command
+    cmd.ActiveConnection = conn
+    cmd.CommandType = adCmdText
+    'cmd.CommandText = "Select * from BCP_TEMP"
+    cmd.CommandText = stmt
     
-    rs.Open "Select * from BCP_TEMP", conn, adOpenDynamic
-        
+    Set GetData = cmd.Execute
+    'Set GetData = Fetch(stmt)
 End Function
 
-Public Sub rsClose()
-    rs.Close
+Public Function Filter(ByVal field, ByVal sqlFrom, ByVal sqlTo) As ADODB.Recordset
+    Dim stmt As String
+    stmt = "SELECT * FROM bcp_temp WHERE " & field & " BETWEEN " & sqlFrom & " AND " & sqlTo
+    Set cmd = New ADODB.Command
+    cmd.ActiveConnection = conn
+    cmd.CommandType = adCmdText
+    'cmd.CommandText = "Select * from BCP_TEMP"
+    cmd.CommandText = stmt
+    
+    Set Filter = cmd.Execute
+    'Set Filter = Fetch(stmt)
+End Function
+
+Public Function GetDept()
+    Dim stmt As String
+    stmt = "SELECT * FROM bcp_dept"
+    Set cmd = New ADODB.Command
+    cmd.ActiveConnection = conn
+    cmd.CommandType = adCmdText
+    'cmd.CommandText = "Select * from BCP_TEMP"
+    cmd.CommandText = stmt
+    
+    Set GetDept = cmd.Execute
+End Function
+
+Public Sub DBTerminate()
+    Set rs = Nothing
+    Set cmd = Nothing
+    Set conn = Nothing
 End Sub
+
+
 
