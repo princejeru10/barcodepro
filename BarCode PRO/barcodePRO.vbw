@@ -1,2 +1,5 @@
-BCTPROmain = 75, 75, 954, 510, Z, 25, 25, 904, 460, C
-DBConnection = 125, 125, 1004, 560, 
+BCTPROmain = 75, 75, 954, 510, , 25, 25, 904, 460, C
+ListViewMod = 75, 75, 954, 510, 
+DBClass = 175, 175, 1054, 610, Z
+mainMod = 50, 50, 929, 485, 
+Queries = 0, 0, 0, 0, C

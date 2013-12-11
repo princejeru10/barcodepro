@@ -56,9 +56,9 @@ Public Function GetData() As ADODB.Recordset
     'Set GetData = Fetch(stmt)
 End Function
 
-Public Function Filter(ByVal field, ByVal sqlFrom, ByVal sqlTo) As ADODB.Recordset
+Public Function Filter(ByVal field, ByVal sqlFrom, ByVal sqlTo, ByVal Where) As ADODB.Recordset
     Dim stmt As String
-    stmt = "SELECT * FROM bcp_temp WHERE `" & field & "` BETWEEN '" & sqlFrom & "' AND '" & sqlTo & "' ORDER BY " & field & " ASC"
+    stmt = "SELECT * FROM bcp_temp WHERE `" & field & "` BETWEEN '" & sqlFrom & "' AND '" & sqlTo & "' " & Where & " ORDER BY " & field & " ASC"
     Set cmd = New ADODB.Command
     cmd.ActiveConnection = conn
     cmd.CommandType = adCmdText
@@ -75,10 +75,54 @@ Public Function GetDept()
     Set cmd = New ADODB.Command
     cmd.ActiveConnection = conn
     cmd.CommandType = adCmdText
-    'cmd.CommandText = "Select * from BCP_TEMP"
     cmd.CommandText = stmt
     
     Set GetDept = cmd.Execute
+End Function
+
+Public Function GetSku()
+    Dim stmt As String
+    stmt = "SELECT Sku FROM bcp_temp"
+    Set cmd = New ADODB.Command
+    cmd.ActiveConnection = conn
+    cmd.CommandType = adCmdText
+    cmd.CommandText = stmt
+    
+    Set GetSku = cmd.Execute
+
+End Function
+
+Public Function GetBarCode()
+    Dim stmt As String
+    stmt = "SELECT Barcode FROM bcp_temp"
+    Set cmd = New ADODB.Command
+    cmd.ActiveConnection = conn
+    cmd.CommandType = adCmdText
+    cmd.CommandText = stmt
+    
+    Set GetBarCode = cmd.Execute
+End Function
+
+Public Function GetEffectiveDate()
+    Dim stmt As String
+    stmt = "SELECT EffectiveDate FROM bcp_temp ORDER BY EffectiveDate ASC"
+    Set cmd = New ADODB.Command
+    cmd.ActiveConnection = conn
+    cmd.CommandType = adCmdText
+    cmd.CommandText = stmt
+    
+    Set GetEffectiveDate = cmd.Execute
+End Function
+
+Public Function ApplyFilters(ByVal Where)
+    Dim stmt As String
+    stmt = "SELECT * FROM bcp_temp WHERE " & Where
+    Set cmd = New ADODB.Command
+    cmd.ActiveConnection = conn
+    cmd.CommandType = adCmdText
+    cmd.CommandText = stmt
+    
+    Set ApplyFilters = cmd.Execute
 End Function
 
 Public Sub DBTerminate()

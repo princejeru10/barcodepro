@@ -29,20 +29,22 @@ End Sub
 
 Public Sub ByDept()
     Dim rs As New ADODB.Recordset
-    Dim field, deptFrom, deptTo As String
+    Dim field, deptFrom, deptTo, Where As String
     
     field = "DeptID"
     
     With BCTPROmain
         deptFrom = .deptFrom.Text
         deptTo = .deptTo.Text
+        .skuBtn.Enabled = True
+        Where = ""
         
         DBCon.dbOpen
-        Set rs = DBCon.Filter(field, deptFrom, deptTo)
+        Set rs = DBCon.Filter(field, deptFrom, deptTo, Where)
+    
         With .ListView1
             .ListItems.Clear
             rs.MoveFirst
-            mainMod.ResetSKU
             mainMod.SetSKUText (rs(2))
             Do Until rs.EOF
                 Set lstItem = .ListItems.Add(, , rs(0))
@@ -59,18 +61,21 @@ Public Sub ByDept()
     SelectFirstRow
 End Sub
 
-Public Sub GetSKU()
+Public Sub BySKU()
     Dim rs As New ADODB.Recordset
-    Dim field, skuFrom, skuTo As String
+    Dim field, skuFrom, skuTo, Where, deptFrom, deptTo As String
     
     field = "Sku"
     
     With BCTPROmain
         skuFrom = .skuFrom.Text
         skuTo = .skuTo.Text
+        deptFrom = .deptFrom.Text
+        deptTo = .deptTo.Text
+        Where = "AND WHERE DeptID BETWEEN '" & deptFrom & "' AND '" & deptTo & "'"
         
         DBCon.dbOpen
-        Set rs = DBCon.Filter(field, skuFrom, skuTo)
+        Set rs = DBCon.Filter(field, skuFrom, skuTo, Where)
         With .ListView1
             .ListItems.Clear
             rs.MoveFirst
@@ -83,6 +88,9 @@ Public Sub GetSKU()
             Loop
         End With
     End With
+    DBCon.DBTerminate
+            
+    SelectFirstRow
 End Sub
 
 Public Function SelectFirstRow()
@@ -108,34 +116,18 @@ Public Function ChangeBCValues()
         End With
         
         .skuBC1 = sku
-        .skuBC2 = sku
-        .skuBC3 = sku
         .skuBC4 = sku
-        .skuBC5 = sku
-        .skuBC6 = sku
         
         .deptBC1 = dn
-        .deptBC2 = dn
-        .deptBC3 = dn
         
         .BC1 = bc
-        .BC2 = bc
-        .BC3 = bc
         
         .BCBarCode1 = bc
-        .BCBarCode2 = bc
-        .BCBarCode3 = bc
         
         .DescBC1 = Mid(desc, 1, 30)
-        .DescBC2 = Mid(desc, 1, 30)
-        .DescBC3 = Mid(desc, 1, 30)
         
         .PriceBC1 = price
-        .PriceBC2 = price
-        .PriceBC3 = price
         
         .dateBC1 = eDate
-        .dateBC2 = eDate
-        .dateBC3 = eDate
     End With
 End Function

@@ -10,6 +10,7 @@ Module=ListViewMod; ListViewMod.bas
 Class=DBClass; DBClass.cls
 Module=mainMod; BCTPROmainMod.bas
 Class=Queries; Queries.cls
+Module=PrintBarCodeMod; PrintBarCode.bas
 IconForm="BCTPROmain"
 Startup="BCTPROmain"
 HelpFile=""
