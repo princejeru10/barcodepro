@@ -13,20 +13,19 @@ Begin VB.Form BCTPROmain
    ScaleHeight     =   7515
    ScaleWidth      =   15735
    StartUpPosition =   3  'Windows Default
+   Begin VB.CommandButton addBarCodeBtn 
+      Caption         =   "ADD NEW BARCODE"
+      Height          =   615
+      Left            =   2520
+      TabIndex        =   62
+      Top             =   6840
+      Width           =   2355
+   End
    Begin VB.CommandButton ClearBtn 
       Caption         =   "RESET"
       Height          =   495
       Left            =   120
-      TabIndex        =   26
-      Top             =   6960
-      Width           =   2295
-   End
-   Begin VB.CommandButton submitBtn 
-      Caption         =   "SUBMIT"
-      Enabled         =   0   'False
-      Height          =   495
-      Left            =   2520
-      TabIndex        =   21
+      TabIndex        =   25
       Top             =   6960
       Width           =   2295
    End
@@ -113,14 +112,14 @@ Begin VB.Form BCTPROmain
          Enabled         =   0   'False
          Height          =   495
          Left            =   2880
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   960
          Width           =   1575
       End
       Begin VB.ComboBox dateTo 
          Height          =   315
          Left            =   2880
-         TabIndex        =   25
+         TabIndex        =   24
          Text            =   "Combo2"
          Top             =   480
          Width           =   1575
@@ -128,7 +127,7 @@ Begin VB.Form BCTPROmain
       Begin VB.ComboBox dateFrom 
          Height          =   315
          Left            =   720
-         TabIndex        =   24
+         TabIndex        =   23
          Text            =   "Combo1"
          Top             =   480
          Width           =   1575
@@ -162,14 +161,14 @@ Begin VB.Form BCTPROmain
          Enabled         =   0   'False
          Height          =   495
          Left            =   2880
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   960
          Width           =   1575
       End
       Begin VB.ComboBox barCodeTo 
          Height          =   315
          Left            =   2880
-         TabIndex        =   23
+         TabIndex        =   22
          Text            =   "Combo1"
          Top             =   480
          Width           =   1575
@@ -177,7 +176,7 @@ Begin VB.Form BCTPROmain
       Begin VB.ComboBox barCodeFrom 
          Height          =   315
          Left            =   720
-         TabIndex        =   22
+         TabIndex        =   21
          Text            =   "Combo1"
          Top             =   480
          Width           =   1575
@@ -301,10 +300,10 @@ Begin VB.Form BCTPROmain
       Left            =   4920
       ScaleHeight     =   2955
       ScaleWidth      =   10635
-      TabIndex        =   29
+      TabIndex        =   28
       Top             =   240
       Width           =   10695
-      Begin VB.Label Label25 
+      Begin VB.Label dateBC3 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "12/5"
@@ -318,12 +317,12 @@ Begin VB.Form BCTPROmain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   10080
-         TabIndex        =   62
+         Left            =   9480
+         TabIndex        =   61
          Top             =   2520
-         Width           =   375
+         Width           =   855
       End
-      Begin VB.Label Label24 
+      Begin VB.Label skuBC6 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "12345678"
@@ -337,12 +336,12 @@ Begin VB.Form BCTPROmain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   7440
-         TabIndex        =   61
+         Left            =   7800
+         TabIndex        =   60
          Top             =   2520
          Width           =   855
       End
-      Begin VB.Label Label23 
+      Begin VB.Label deptBC3 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "1234"
@@ -356,12 +355,12 @@ Begin VB.Form BCTPROmain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   7440
-         TabIndex        =   60
+         Left            =   7800
+         TabIndex        =   59
          Top             =   2520
-         Width           =   3135
+         Width           =   2535
       End
-      Begin VB.Label Label22 
+      Begin VB.Label BCBarCode3 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "1234567890128"
@@ -376,11 +375,11 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   7440
-         TabIndex        =   59
+         TabIndex        =   58
          Top             =   2280
          Width           =   3015
       End
-      Begin VB.Label Label21 
+      Begin VB.Label BC3 
          Alignment       =   2  'Center
          Caption         =   "1234567890128"
          BeginProperty Font 
@@ -394,11 +393,11 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   735
          Left            =   7320
-         TabIndex        =   58
+         TabIndex        =   57
          Top             =   1560
          Width           =   3375
       End
-      Begin VB.Label Label20 
+      Begin VB.Label DescBC3 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "ITEM DESCRIPTION"
@@ -413,11 +412,11 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   7680
-         TabIndex        =   57
+         TabIndex        =   56
          Top             =   1200
          Width           =   2655
       End
-      Begin VB.Label Label19 
+      Begin VB.Label skuBC3 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "12345678"
@@ -432,7 +431,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   7440
-         TabIndex        =   56
+         TabIndex        =   55
          Top             =   960
          Width           =   3135
       End
@@ -450,7 +449,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   9840
-         TabIndex        =   55
+         TabIndex        =   54
          Top             =   600
          Width           =   375
       End
@@ -469,11 +468,11 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   375
          Left            =   7800
-         TabIndex        =   54
+         TabIndex        =   53
          Top             =   600
          Width           =   495
       End
-      Begin VB.Label Label16 
+      Begin VB.Label PriceBC3 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "9999.99"
@@ -488,7 +487,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   375
          Left            =   7320
-         TabIndex        =   53
+         TabIndex        =   52
          Top             =   600
          Width           =   3255
       End
@@ -508,7 +507,7 @@ Begin VB.Form BCTPROmain
          ForeColor       =   &H8000000B&
          Height          =   375
          Left            =   7440
-         TabIndex        =   52
+         TabIndex        =   51
          Top             =   0
          Width           =   3135
       End
@@ -520,7 +519,7 @@ Begin VB.Form BCTPROmain
          Top             =   0
          Width           =   3135
       End
-      Begin VB.Label Label14 
+      Begin VB.Label dateBC2 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "12/5"
@@ -534,12 +533,12 @@ Begin VB.Form BCTPROmain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   6480
-         TabIndex        =   51
+         Left            =   5880
+         TabIndex        =   50
          Top             =   2520
-         Width           =   375
+         Width           =   975
       End
-      Begin VB.Label Label12 
+      Begin VB.Label skuBC5 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "12345678"
@@ -553,12 +552,12 @@ Begin VB.Form BCTPROmain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   3840
-         TabIndex        =   49
+         Left            =   4200
+         TabIndex        =   48
          Top             =   2520
          Width           =   855
       End
-      Begin VB.Label Label11 
+      Begin VB.Label BCBarCode2 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "1234567890128"
@@ -573,11 +572,11 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   4680
-         TabIndex        =   48
+         TabIndex        =   47
          Top             =   2280
          Width           =   1455
       End
-      Begin VB.Label Label10 
+      Begin VB.Label BC2 
          Alignment       =   2  'Center
          Caption         =   "1234567890128"
          BeginProperty Font 
@@ -591,11 +590,11 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   735
          Left            =   3720
-         TabIndex        =   47
+         TabIndex        =   46
          Top             =   1560
          Width           =   3375
       End
-      Begin VB.Label Label9 
+      Begin VB.Label DescBC2 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "ITEM DESCRIPTION"
@@ -610,11 +609,11 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   4080
-         TabIndex        =   46
+         TabIndex        =   45
          Top             =   1200
          Width           =   2655
       End
-      Begin VB.Label Label8 
+      Begin VB.Label skuBC2 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "12345678"
@@ -629,7 +628,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   4680
-         TabIndex        =   45
+         TabIndex        =   44
          Top             =   960
          Width           =   1455
       End
@@ -647,7 +646,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   6240
-         TabIndex        =   44
+         TabIndex        =   43
          Top             =   600
          Width           =   375
       End
@@ -666,11 +665,11 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   375
          Left            =   4320
-         TabIndex        =   43
+         TabIndex        =   42
          Top             =   600
          Width           =   495
       End
-      Begin VB.Label Label3 
+      Begin VB.Label PriceBC2 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "9999.99"
@@ -685,7 +684,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   375
          Left            =   3720
-         TabIndex        =   42
+         TabIndex        =   41
          Top             =   600
          Width           =   3375
       End
@@ -705,7 +704,7 @@ Begin VB.Form BCTPROmain
          ForeColor       =   &H8000000B&
          Height          =   375
          Left            =   3720
-         TabIndex        =   41
+         TabIndex        =   40
          Top             =   0
          Width           =   3375
       End
@@ -724,7 +723,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   1200
-         TabIndex        =   40
+         TabIndex        =   39
          Top             =   2280
          Width           =   1335
       End
@@ -742,11 +741,12 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   735
          Left            =   120
-         TabIndex        =   39
+         TabIndex        =   38
          Top             =   1560
          Width           =   3255
       End
       Begin VB.Label dateBC1 
+         Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "12/5"
          BeginProperty Font 
@@ -759,10 +759,10 @@ Begin VB.Form BCTPROmain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   2640
-         TabIndex        =   38
+         Left            =   2160
+         TabIndex        =   37
          Top             =   2520
-         Width           =   375
+         Width           =   975
       End
       Begin VB.Label deptBC1 
          Alignment       =   2  'Center
@@ -779,7 +779,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   600
-         TabIndex        =   37
+         TabIndex        =   36
          Top             =   2520
          Width           =   2415
       End
@@ -798,7 +798,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   480
-         TabIndex        =   36
+         TabIndex        =   35
          Top             =   2520
          Width           =   855
       End
@@ -817,7 +817,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   360
-         TabIndex        =   35
+         TabIndex        =   34
          Top             =   1200
          Width           =   2775
       End
@@ -835,7 +835,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   120
-         TabIndex        =   34
+         TabIndex        =   33
          Top             =   960
          Width           =   3255
       End
@@ -853,7 +853,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   255
          Left            =   2520
-         TabIndex        =   33
+         TabIndex        =   32
          Top             =   600
          Width           =   375
       End
@@ -872,7 +872,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   375
          Left            =   600
-         TabIndex        =   32
+         TabIndex        =   31
          Top             =   600
          Width           =   495
       End
@@ -891,7 +891,7 @@ Begin VB.Form BCTPROmain
          EndProperty
          Height          =   375
          Left            =   120
-         TabIndex        =   31
+         TabIndex        =   30
          Top             =   600
          Width           =   3255
       End
@@ -911,7 +911,7 @@ Begin VB.Form BCTPROmain
          ForeColor       =   &H8000000B&
          Height          =   375
          Left            =   120
-         TabIndex        =   30
+         TabIndex        =   29
          Top             =   0
          Width           =   3255
       End
@@ -931,7 +931,7 @@ Begin VB.Form BCTPROmain
          Top             =   0
          Width           =   3135
       End
-      Begin VB.Label Label13 
+      Begin VB.Label deptBC2 
          Alignment       =   2  'Center
          BackStyle       =   0  'Transparent
          Caption         =   "1234"
@@ -945,10 +945,10 @@ Begin VB.Form BCTPROmain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   3840
-         TabIndex        =   50
+         Left            =   4320
+         TabIndex        =   49
          Top             =   2520
-         Width           =   3135
+         Width           =   2415
       End
    End
 End
@@ -962,9 +962,21 @@ Attribute VB_Exposed = False
 Public bc As String
 
 
+Private Sub addBarCodeBtn_Click()
+    AddNewBarCode.Show
+End Sub
+
+Private Sub barcodeBtn_Click()
+    ListViewMod.ByBarCode
+End Sub
+
 Private Sub ClearBtn_Click()
     reset
     ListViewMod.PopulateListView
+End Sub
+
+Private Sub DateBtn_Click()
+    ListViewMod.ByDate
 End Sub
 
 Private Sub deptFilterBtn_Click()
@@ -989,19 +1001,29 @@ Dim item As ListItem
             End With
             
             skuBC1 = sku
+            skuBC2 = sku
+            skuBC3 = sku
             skuBC4 = sku
-            
+            skuBC5 = sku
+            skuBC6 = sku
             deptBC1 = dn
-            
+            deptBC2 = dn
+            deptBC3 = dn
             BC1 = bc
-            
+            BC2 = bc
+            BC3 = bc
             BCBarCode1 = bc
-            
-            DescBC1 = Mid(desc, 1, 30)
-            
+            BCBarCode2 = bc
+            BCBarCode3 = bc
+            DescBC1 = Mid(desc, 1, 25)
+            DescBC2 = Mid(desc, 1, 25)
+            DescBC3 = Mid(desc, 1, 25)
             PriceBC1 = price
-            
+            PriceBC2 = price
+            PriceBC3 = price
             dateBC1 = eDate
+            dateBC2 = eDate
+            dateBC3 = eDate
             
             PrintBarCodeMod.startPrint
         End If
@@ -1117,6 +1139,6 @@ Private Sub ExitBtn_Click()
     End
 End Sub
 
-Private Sub submitBtn_Click()
-    mainMod.SetFilteredValues
-End Sub
+'Private Sub submitBtn_Click()
+    'mainMod.SetFilteredValues
+'End Sub

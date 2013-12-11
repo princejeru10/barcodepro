@@ -65,7 +65,7 @@ Dim rv As Long
     End If
         
     'for the position of the picture on paper
-    Printer.PaintPicture .Picture, 0, 0, PrnPicWidth, PrnPicHeight
+    Printer.PaintPicture .Picture, 2, 0, PrnPicWidth, PrnPicHeight
     Printer.EndDoc
     .Picture = LoadPicture()
     

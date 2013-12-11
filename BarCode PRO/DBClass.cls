@@ -58,7 +58,9 @@ End Function
 
 Public Function Filter(ByVal field, ByVal sqlFrom, ByVal sqlTo, ByVal Where) As ADODB.Recordset
     Dim stmt As String
-    stmt = "SELECT * FROM bcp_temp WHERE `" & field & "` BETWEEN '" & sqlFrom & "' AND '" & sqlTo & "' " & Where & " ORDER BY " & field & " ASC"
+    stmt = "SELECT * FROM bcp_temp WHERE  " & Where & " `" & field & "` BETWEEN '" & sqlFrom & "' AND '" & sqlTo & "' ORDER BY Sku ASC"
+    'MsgBox stmt
+    
     Set cmd = New ADODB.Command
     cmd.ActiveConnection = conn
     cmd.CommandType = adCmdText
@@ -123,6 +125,18 @@ Public Function ApplyFilters(ByVal Where)
     cmd.CommandText = stmt
     
     Set ApplyFilters = cmd.Execute
+End Function
+
+Public Function insertNewBarcode(ByVal dept, ByVal sku, ByVal barcode, ByVal eDate)
+    Dim stmt As String
+    stmt = "INSERT into bcp_temp VALUES(NULL,'" & dept & "','" & sku & "','" & barcode & "','NA','0.00','" & eDate & "')"
+    MsgBox stmt
+    Set cmd = New ADODB.Command
+    cmd.ActiveConnection = conn
+    cmd.CommandType = adCmdText
+    cmd.CommandText = stmt
+    
+    Set insertNewBarcode = cmd.Execute
 End Function
 
 Public Sub DBTerminate()
